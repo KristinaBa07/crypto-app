@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAssets } from "../services/api";
-import SearchBar from "../components/Button";
+import SearchBar from "../components/SearchBar";
 import Button from "../components/Button";
 import AssetItem from "../components/AssetItem";
 
