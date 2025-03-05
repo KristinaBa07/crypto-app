@@ -8,7 +8,7 @@ test("removes an asset from the wallet", async () => {
     const assetInput = screen.getByPlaceholderText(/Asset name/i);
     const amountInput = screen.getByPlaceholderText(/Amount/i);
     const addButton = screen.getByText(/Add Asset/i);
-    const removeButton = screen.getByText(/Remove Asset/i);
+   
   
     
     fireEvent.change(assetInput, { target: { value: "bitcoin" } });
@@ -16,16 +16,13 @@ test("removes an asset from the wallet", async () => {
     fireEvent.click(addButton);
   
     
-    expect(screen.getByText(/bitcoin: 2/i)).toBeInTheDocument();
+    await screen.findByText(/bitcoin: 2/i);
   
     
-    fireEvent.change(assetInput, { target: { value: "bitcoin" } });
-    fireEvent.change(amountInput, { target: { value: "2" } });
+    const removeButton = screen.getByText(/Remove/i);
     fireEvent.click(removeButton);
   
     
     await new Promise((r) => setTimeout(r, 100));
-  
-   
     expect(screen.queryByText(/bitcoin: 2/i)).not.toBeInTheDocument();
 });
