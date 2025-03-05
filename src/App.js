@@ -7,6 +7,9 @@ function App() {
     <Router>
         <div>
         <NavBar /> 
+        <Routes>
+        <Route path="/" element={<Home />} />
+        </Routes>
         </div>
     </Router>
     
