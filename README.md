@@ -4,7 +4,7 @@ A simple React application for managing cryptocurrency assets, including a walle
 
 ## Installation
 
-Use the package manager [node](https://pip.pypa.io/en/stable/) to install dependencies.
+Use the package manager [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install dependencies.
 
 ```bash
 npm install
