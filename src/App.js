@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home"
 import AssetDetail from "./pages/AssetDetails";
 import Wallet from "./pages/Wallet";
+import "../src/styles.css"
 
 function App() {
   return (
