@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAssets } from "../services/api";
 import SearchBar from "../components/SearchBar";
-import Button from "../components/Button";
 import AssetItem from "../components/AssetItem";
 
 const Home = () => {
@@ -29,7 +28,7 @@ const Home = () => {
           <AssetItem key={asset.id} asset={asset} />
         ))}
       </ul>
-      <Button onClick={() => alert("Fetching latest prices...")}>Refresh Prices</Button>
+      
     </div>
   );
 };
