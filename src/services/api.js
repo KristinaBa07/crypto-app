@@ -8,7 +8,7 @@ export const getAssets = async () => {
     return response.data.data;
   } catch (error) {
     console.error("Error fetching assets", error);
-    return [];
+    throw new Error(error);
   }
 };
 
@@ -18,19 +18,19 @@ export const getAssetDetail = async (id) => {
     return response.data.data;
   } catch (error) {
     console.error("Error fetching asset details", error);
-    return null;
+    throw new Error(error);
   }
 };
 
 export const getAssetHistory = async (id) => {
   try {
-    const response = await axios.get(`https://api.coincap.io/v2/assets/${id}/history?interval=h1`);
+    const response = await axios.get(`${API_URL}/${id}/history?interval=h1`);
     return response.data.data.map(item => ({
       time: new Date(item.time).toLocaleTimeString(),
       price: parseFloat(item.priceUsd)
     }));
   } catch (error) {
     console.error("Error fetching asset history", error);
-    return [];
+    throw new Error(error);
   }
 };
