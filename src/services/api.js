@@ -8,7 +8,7 @@ export const getAssets = async () => {
     return response.data.data;
   } catch (error) {
     console.error("Error fetching assets", error);
-    throw new Error(error);
+    return [];
   }
 };
 
@@ -18,7 +18,7 @@ export const getAssetDetail = async (id) => {
     return response.data.data;
   } catch (error) {
     console.error("Error fetching asset details", error);
-    throw new Error(error);
+    return null;
   }
 };
 
@@ -31,6 +31,6 @@ export const getAssetHistory = async (id) => {
     }));
   } catch (error) {
     console.error("Error fetching asset history", error);
-    throw new Error(error);
+    return [];
   }
 };
